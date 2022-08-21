@@ -166,43 +166,40 @@ body {
   margin: 0 auto;
   position: relative;
 }
-.krakow__link {
+.block-map__point_krakow {
   top: 33.5%;
   left: 59.3%;
 }
-.krakow__tooltip {
-  top: 14%;
-  left: 58.1%;
-}
-
-.hamburg__link {
+.block-map__point_hamburg {
   top: 22.5%;
   left: 42.2%;
 }
-.hamburg__tooltip {
-  top: 3%;
-  left: 41%;
-}
-
-.turin__link {
+.block-map__point_turin {
   top: 57.5%;
   left: 38.1%;
 }
-.turin__tooltip {
-  top: 38%;
-  left: 36.9%;
-}
-
-.madrid__link {
+.block-map__point_madrid {
   top: 73.1%;
   left: 14.6%;
 }
-.madrid__tooltip {
+.block-map__tooltip_krakow {
+  top: 14%;
+  left: 58.1%;
+}
+.block-map__tooltip_hamburg {
+  top: 3%;
+  left: 41%;
+}
+.block-map__tooltip_turin {
+  top: 38%;
+  left: 36.9%;
+}
+.block-map__tooltip_madrid {
   top: 53.5%;
   left: 13.5%;
 }
 
-.link {
+.point {
   cursor: pointer;
   position: absolute;
   width: 20px;
@@ -214,7 +211,7 @@ body {
   -webkit-animation: animate 1.5s linear infinite;
           animation: animate 1.5s linear infinite;
 }
-.link::before, .link::after {
+.point::before, .point::after {
   border-radius: 100%;
   border: 1px solid rgb(255, 0, 71);
   width: 30px;
@@ -224,9 +221,13 @@ body {
   top: -31%;
   left: -6px;
 }
-.link::after {
+.point::after {
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
+}
+.point:hover + .tooltip {
+  -webkit-animation: button 5s ease-in-out 1s;
+          animation: button 5s ease-in-out 1s;
 }
 @-webkit-keyframes animate {
   0% {
@@ -275,8 +276,10 @@ body {
   background: rgb(55, 55, 55);
   width: 200px;
   height: 100px;
-  -webkit-animation: button 5s ease-in-out 1s;
-          animation: button 5s ease-in-out 1s;
+  opacity: 0;
+  -webkit-transition-delay: 5s;
+       -o-transition-delay: 5s;
+          transition-delay: 5s;
 }
 .tooltip:before {
   content: " ";
@@ -331,8 +334,8 @@ body {
     opacity: 1;
   }
   100% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
     opacity: 0;
   }
 }
@@ -348,8 +351,8 @@ body {
     opacity: 1;
   }
   100% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
     opacity: 0;
   }
 }

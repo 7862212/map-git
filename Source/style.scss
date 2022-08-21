@@ -57,80 +57,64 @@ body {
 		position: relative;
 	}
 
-	// .block-map__krakow
-	&__krakow {}
-
-	// .block-map__hamburg
-	&__hamburg {}
-
-	// .block-map__turin
-	&__turin {}
-
-	// .block-map__madrid
-	&__madrid {}
-}
-
-.krakow {
-
-	// .krakow__link
-	&__link {
-		top: 33.5%;
-		left: 59.3%;
+	// .block-map__point
+	&__point {
+	
+		// .block-map__point_krakow
+		&_krakow {
+			top: 33.5%;
+			left: 59.3%;
+		}
+	
+		// .block-map__point_hamburg
+		&_hamburg {
+			top: 22.5%;
+			left: 42.2%;
+		}
+	
+		// .block-map__point_turin
+		&_turin {
+			top: 57.5%;
+			left: 38.1%;
+		}
+	
+		// .block-map__point_madrid
+		&_madrid {
+			top: 73.1%;
+			left: 14.6%;
+		}
 	}
 
-	// .krakow__tooltip
+	// .block-map__tooltip
 	&__tooltip {
-		top: 14%;
-		left: 58.1%;
+	
+		// .block-map__tooltip_krakow
+		&_krakow {
+			top: 14%;
+			left: 58.1%;
+		}
+	
+		// .block-map__tooltip_hamburg
+		&_hamburg {
+			top: 3%;
+			left: 41%;
+		}
+
+		// .block-map__tooltip_turin
+		&_turin {
+			top: 38%;
+			left: 36.9%;
+		}
+
+		// .block-map__tooltip_madrid
+		&_madrid {
+			top: 53.5%;
+			left: 13.5%;
+		}
 	}
 }
 
-.hamburg {
-
-	// .hamburg__link
-	&__link {
-		top: 22.5%;
-		left: 42.2%;
-	}
-
-	// .hamburg__tooltip
-	&__tooltip {
-		top: 3%;
-		left: 41%;
-	}
-}
-
-.turin {
-
-	// .turin__link
-	&__link {
-		top: 57.5%;
-		left: 38.1%;
-	}
-
-	// .turin__tooltip
-	&__tooltip {
-		top: 38%;
-		left: 36.9%;
-	}
-}
-
-.madrid {
-
-	// .madrid__link
-	&__link {
-		top: 73.1%;
-		left: 14.6%;
-	}
-
-	// .madrid__tooltip
-	&__tooltip {
-		top: 53.5%;
-		left: 13.5%;
-	}
-}
-
-.link {
+.point {
 	cursor: pointer;
 	position: absolute;
 	width: 20px;
@@ -155,6 +139,10 @@ body {
 
 	&::after {
 		animation-delay: .5s;
+	}
+
+	&:hover + .tooltip {
+		animation: button 5s ease-in-out 1s;
 	}
 
 	@keyframes animate {
@@ -183,9 +171,8 @@ body {
 	background: rgba(55, 55, 55, 255);
 	width: 200px;
 	height: 100px;
-	animation: button 5s ease-in-out 1s;
-	//animation-play-state: paused;
-	//opacity: 0;
+	opacity: 0;
+	transition-delay: 5s;
 
 	&:before {
 		content: " ";
@@ -234,14 +221,12 @@ body {
 			transform: scaleX(0);
 			opacity: 0;
 		}
-
 		50% {
 			transform: scaleX(1);
 			opacity: 1;
 		}
-
 		100% {
-			transform: scaleX(1);
+			transform: scaleX(0);
 			opacity: 0;
 		}
 	}
