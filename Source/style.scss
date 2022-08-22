@@ -137,14 +137,10 @@ body {
 		left: -6px;
 	}
 
-	//&::after {
-	//	animation-delay: .5s;
-	//}
-
 	&:hover + .tooltip {
-		//animation: button 3s ease-in-out 1s;
-		transition-delay: 0s;
-		visibility: visible;
+		transform: scaleX(1);
+		opacity: 1;
+		transition: 1s;
 	}
 
 	@keyframes animate {
@@ -171,8 +167,9 @@ body {
 	background: rgba(55, 55, 55, 255);
 	width: 200px;
 	height: 100px;
-	transition: all 0s ease-in-out 3s;
-	visibility: hidden;
+	opacity: 0;
+	transform: scaleX(0);
+	transition: 1s 3s;
 
 	&:before {
 		content: " ";
@@ -216,18 +213,26 @@ body {
 		background: #ff0047;
 	}
 
-	//@keyframes button {
-	//	0% {
-	//		transform: scaleX(0);
-	//		opacity: 0;
-	//	}
-	//	50% {
-	//		transform: scaleX(1);
-	//		opacity: 1;
-	//	}
-	//	100% {
-	//		transform: scaleX(0);
-	//		opacity: 0;
-	//	}
-	//}
+	@keyframes button {
+		0% {
+			transform: scaleX(0);
+			opacity: 0;
+		}
+		25% {
+		transform: scaleX(0.5);
+		opacity: 0.5;
+		}
+		50% {
+			transform: scaleX(1);
+			opacity: 1;
+		}
+		75% {
+			transform: scaleX(0.5);
+			opacity: 0.5;
+		}
+		100% {
+			transform: scaleX(0);
+			opacity: 0;
+		}
+	}
 }
