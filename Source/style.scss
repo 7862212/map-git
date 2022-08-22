@@ -137,9 +137,9 @@ body {
 		left: -6px;
 	}
 
-	&::after {
-		animation-delay: .5s;
-	}
+	//&::after {
+	//	animation-delay: .5s;
+	//}
 
 	&:hover + .tooltip {
 		//animation: button 3s ease-in-out 1s;

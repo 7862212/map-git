@@ -221,10 +221,6 @@ body {
   top: -31%;
   left: -6px;
 }
-.point::after {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-}
 .point:hover + .tooltip {
   -webkit-transition-delay: 0s;
        -o-transition-delay: 0s;
