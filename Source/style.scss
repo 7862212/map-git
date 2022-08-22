@@ -169,7 +169,7 @@ body {
 	height: 100px;
 	opacity: 0;
 	transform: scaleX(0);
-	transition: 1s 3s;
+	transition: 0.5s 3s;
 
 	&:before {
 		content: " ";
@@ -213,26 +213,26 @@ body {
 		background: #ff0047;
 	}
 
-	@keyframes button {
-		0% {
-			transform: scaleX(0);
-			opacity: 0;
-		}
-		25% {
-		transform: scaleX(0.5);
-		opacity: 0.5;
-		}
-		50% {
-			transform: scaleX(1);
-			opacity: 1;
-		}
-		75% {
-			transform: scaleX(0.5);
-			opacity: 0.5;
-		}
-		100% {
-			transform: scaleX(0);
-			opacity: 0;
-		}
-	}
+	//@keyframes button {
+	//	0% {
+	//		transform: scaleX(0);
+	//		opacity: 0;
+	//	}
+	//	25% {
+	//	transform: scaleX(0.5);
+	//	opacity: 0.5;
+	//	}
+	//	50% {
+	//		transform: scaleX(1);
+	//		opacity: 1;
+	//	}
+	//	75% {
+	//		transform: scaleX(0.5);
+	//		opacity: 0.5;
+	//	}
+	//	100% {
+	//		transform: scaleX(0);
+	//		opacity: 0;
+	//	}
+	//}
 }
